@@ -1,0 +1,7 @@
+{
+  "material": "aluminium",
+  "process": "CNC machining",
+  "quantity": 1000,
+  "deadline_weeks": 6,
+  "certifications": ["ISO 9001"]
+}

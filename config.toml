@@ -1,0 +1,30 @@
+# Veridia matcher configuration. Everything that changes a result lives here.
+
+# Reference date for certificate validity. Fixed on purpose: the same request
+# must give the same answer tomorrow. Override per request with --as-of / "as_of".
+as_of = "2026-10-28"
+
+# Warn when a certificate expires within this many days after as_of.
+expiry_warning_days = 60
+
+# Capacity maths: units available in a window = capacity_per_month * weeks / weeks_per_month.
+weeks_per_month = 4.33
+
+# Input sanity limits (anything beyond these is rejected as absurd).
+max_quantity = 1000000
+max_deadline_weeks = 104
+
+# A capacity hold is soft and expires on its own.
+hold_ttl_seconds = 1800
+
+# How many ranked matches to return (the total match count is always reported).
+result_limit = 10
+
+# Score weights (relative; re-normalised over the components that are available
+# for a given manufacturer, so a missing value is neither rewarded nor punished).
+[weights]
+lead_time = 0.30          # margin between supplier lead time and the buyer's deadline
+delivery = 0.25           # on_time_delivery_pct
+cert_runway = 0.20        # how long the required certificates stay valid after expected delivery
+capacity = 0.15           # spare capacity after this order (and after other buyers' holds)
+export_experience = 0.10  # export_experience_years

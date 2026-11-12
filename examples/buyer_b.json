@@ -1,0 +1,7 @@
+{
+  "material": "stainless steel",
+  "process": "sheet metal",
+  "quantity": 1500,
+  "deadline_weeks": 6,
+  "certifications": ["ISO 9001"]
+}

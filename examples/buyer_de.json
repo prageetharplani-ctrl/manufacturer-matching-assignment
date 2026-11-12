@@ -1,0 +1,9 @@
+{
+  "material": "aluminium",
+  "process": "CNC machining",
+  "quantity": 3000,
+  "batches": 4,
+  "deadline_weeks": 8,
+  "certifications": ["ISO 9001"],
+  "buyer_country": "Germany"
+}
